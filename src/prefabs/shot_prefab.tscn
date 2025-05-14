@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5pd4np157c4"]
+
+[ext_resource type="Texture2D" uid="uid://32s0nx8k7yei" path="res://src/assets/Chiken Adventure/EggItem.png" id="1_1ibqt"]
+[ext_resource type="Script" uid="uid://cu41aebytm4lk" path="res://src/prefabs/shot_prefab.gd" id="1_yo721"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yo721"]
+radius = 3.0
+height = 8.0
+
+[node name="ShotPrefab" type="Area2D"]
+rotation = 1.5708
+script = ExtResource("1_yo721")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+rotation = 0.000258911
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_yo721")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ibqt")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_screen_exited"]
