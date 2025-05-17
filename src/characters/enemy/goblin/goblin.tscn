@@ -1,0 +1,184 @@
+[gd_scene load_steps=16 format=3 uid="uid://coemy7a7g1x56"]
+
+[ext_resource type="Script" uid="uid://y0aet66m3irp" path="res://src/characters/enemy/goblin/goblin.gd" id="1_231c2"]
+[ext_resource type="Texture2D" uid="uid://crg2mlgcljlvm" path="res://src/assets/Chiken Adventure/goblin_spritesheet.png" id="1_s0r8r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_231c2"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccibp"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2unn"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaeeq"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oaqb"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnojm"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjykt"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr1a3"]
+atlas = ExtResource("1_s0r8r")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xhb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_231c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccibp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2unn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaeeq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oaqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnojm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjykt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr1a3")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_000qd"]
+resource_name = "hurt"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_0xhb4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o483m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_0xhb4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3wo0"]
+_data = {
+&"RESET": SubResource("Animation_o483m"),
+&"hurt": SubResource("Animation_000qd")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4besu"]
+size = Vector2(14, 14)
+
+[node name="Goblin" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 8
+collision_mask = 14
+script = ExtResource("1_231c2")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_0xhb4")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+&"": SubResource("AnimationLibrary_b3wo0")
+}
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_4besu")
+
+[connection signal="animation_finished" from="Animator" to="." method="_on_animation_finished"]

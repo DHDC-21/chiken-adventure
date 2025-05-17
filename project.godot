@@ -16,7 +16,7 @@ config/name_localized={
 "pt": "A Aventura da Galinha"
 }
 config/version="0.0.0"
-run/main_scene="uid://cmf660ub0enlv"
+run/main_scene="uid://bcjac1iprbolt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -27,6 +27,11 @@ window/size/viewport_height=240
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+Player=""
+Enemy=""
 
 [input]
 
@@ -66,6 +71,8 @@ attack={
 2d_physics/layer_1="Default"
 2d_physics/layer_2="Terrain"
 2d_physics/layer_3="Player"
+2d_physics/layer_4="Enemy"
+2d_physics/layer_5="Item"
 
 [rendering]
 

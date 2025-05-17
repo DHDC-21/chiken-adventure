@@ -17,3 +17,10 @@ func  set_direction(_direction) -> void:
 
 func _on_screen_exited() -> void:
 	queue_free()
+
+
+func _on_body_entered(_body:Node2D) -> void:
+	print(_body.name)
+	if _body.is_in_group("Enemy"):
+		_body.animation.play("hurt")
+		queue_free()

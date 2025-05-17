@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbyqqba50b07f"]
+
+[ext_resource type="Script" uid="uid://d4h5ga4qc846u" path="res://src/prefabs/final_point.gd" id="1_1f5wi"]
+[ext_resource type="Texture2D" uid="uid://0wojdq5il1yu" path="res://src/assets/Chiken Adventure/emptyEggSpot.png" id="1_07jdm"]
+[ext_resource type="Texture2D" uid="uid://dahe6fd63xi4n" path="res://src/assets/Chiken Adventure/EggSpot.png" id="2_my34l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my34l"]
+size = Vector2(18, 18)
+
+[sub_resource type="Animation" id="Animation_1f5wi"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_07jdm")]
+}
+
+[sub_resource type="Animation" id="Animation_ggfog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_07jdm")]
+}
+
+[sub_resource type="Animation" id="Animation_fre5a"]
+resource_name = "win_level"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_my34l")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vjxv6"]
+_data = {
+&"RESET": SubResource("Animation_ggfog"),
+&"idle": SubResource("Animation_1f5wi"),
+&"win_level": SubResource("Animation_fre5a")
+}
+
+[node name="FinalPoint" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_1f5wi")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_my34l")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_07jdm")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vjxv6")
+}
+autoplay = "idle"
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

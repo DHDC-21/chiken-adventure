@@ -9,11 +9,12 @@ height = 8.0
 
 [node name="ShotPrefab" type="Area2D"]
 rotation = 1.5708
+collision_layer = 4
+collision_mask = 12
 script = ExtResource("1_yo721")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 rotation = 0.000258911
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_yo721")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -21,4 +22,5 @@ texture = ExtResource("1_1ibqt")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_screen_exited"]

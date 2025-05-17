@@ -7,13 +7,16 @@ extends CharacterBody2D
 @onready var shot_direction: RayCast2D = $ShotDirection
 
 @export_category("Variables")
-@export var speed: float = 0.7
-@export var jump_force: float = -100.0
+@export var speed: float = 75.0
+@export var jump_force: float = -300.0
 @export var gravity: float =  200
+@export var knockback: int = 1
  
 @export_category("States")
 @export var can_jump: bool = true
 @export var can_attack: bool = true
+@export var can_win_level: bool = false
+@export var can_die: bool = true
 
 @export var  is_attacking: bool = false
 
@@ -22,7 +25,8 @@ func _ready() -> void:
 	pass
 
 func _physics_process(_delta: float) -> void:
-	velocity.y += gravity * _delta
+	if not is_on_floor():
+		velocity += get_gravity() * _delta
 	
 	handle_jump_action(_delta)
 	handle_move()
@@ -51,11 +55,11 @@ func handle_move() -> void:
 			shot_direction.position.x = -5
 			shot_direction.rotation_degrees = 90
 		
-		velocity.x += speed * input_move.normalized().x
+		velocity.x = speed * input_move.normalized().x
 		animation.play("walk")
 		
 	else:
-		velocity.x = 0
+		velocity.x = move_toward(velocity.x, 0, speed)
 		animation.play("idle")
 
 func handle_jump_action(_delta: float) -> void: 
@@ -63,22 +67,21 @@ func handle_jump_action(_delta: float) -> void:
 	
 	if input_jump and is_on_floor():
 		can_jump = false
-		velocity.y += jump_force
+		velocity.y = jump_force
 
 func handle_attack() -> void:
 	var input_attack = Input.is_action_just_pressed("attack")
 	
 	if input_attack:
-		print("is attacking")
+		print(self.name, ": *is attacking*")
 		can_attack = false;
 		#is_attacking = true
 		animation.play("attack")
 
 func shot_prefab() -> void:
-	#print("atirando!")
 	var newShot = preload("res://src/prefabs/shot_prefab.tscn").instantiate()
 	
-	add_child(newShot)
+	get_tree().current_scene.add_child(newShot)
 	
 	newShot.global_position = shot_spawn.global_position
 	
@@ -88,19 +91,41 @@ func shot_prefab() -> void:
 	newShot.set_collision_mask_value(4, true)
 	
 	if spritesheet.flip_h:
-		print("Atirando para diretia")
+		print(self.name, ": atirando para direita!")
 		newShot.sprite.set_flip_v(true)
 		newShot.set_direction(1)
-		velocity.x = -50 * speed
+		velocity.x = -knockback * speed
 	else:
-		print("Atirando para esquerda")
+		print(self.name, ": atirando para esquerda!")
 		newShot.sprite.set_flip_v(false)
 		newShot.set_direction(-1)
-		velocity.x = 50 * speed
+		velocity.x = knockback * speed
 
 func _on_animation_finished(anim_name: StringName) -> void:
-	#print("Animação finalizada")
+	# print(self.name,": animação finalizada!")
 	if anim_name == "attack":
-		print("Ataque finalizado")
+		print(self.name,": ataque finalizado.")
 		can_attack = true
 		#is_attacking = false
+
+
+func _on_hurt_box_body_entered(_body:Node2D) -> void:
+	if _body.name != self.name and _body.is_in_group("Enemy") and can_die:
+		print(self.name,": fui acertado pelo ",_body.name)
+		
+
+func _on_hurt_box_area_entered(_area: Area2D) -> void:
+	match _area.name:
+		&"EggItem":
+			print(self.name, ": peguei o ",String(_area.name))
+			can_win_level = true
+			_area.queue_free()
+			var hud_egg = get_tree().current_scene.get_node("Hud/Egg")
+			hud_egg.modulate = Color(1,1,1,1) 
+
+		&"FinalPoint":
+			if can_win_level == true:
+				print(self.name,": *ganhei o level*!")
+				_area.animation.play("win_level")
+			else:
+				print(self.name,": cheguei ao ",String(_area.name))

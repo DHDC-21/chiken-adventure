@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtmertlkwjwbm"]
+
+[ext_resource type="Texture2D" uid="uid://32s0nx8k7yei" path="res://src/assets/Chiken Adventure/EggItem.png" id="1_eqvli"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="Egg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.196078)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("1_eqvli")

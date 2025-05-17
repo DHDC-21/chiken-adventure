@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://drfgrvwobvyv6"]
+[gd_scene load_steps=23 format=3 uid="uid://drfgrvwobvyv6"]
 
 [ext_resource type="Texture2D" uid="uid://biufxqlvunhw8" path="res://src/assets/Chiken Adventure/chicken_spritesheet.png" id="1_4anbu"]
-[ext_resource type="Script" uid="uid://cuw5obq527jk4" path="res://src/player/player.gd" id="1_rxibo"]
+[ext_resource type="Script" uid="uid://cuw5obq527jk4" path="res://src/characters/player/player.gd" id="1_rxibo"]
 
 [sub_resource type="Animation" id="Animation_jiejy"]
 resource_name = "attack"
@@ -250,7 +250,10 @@ animations = [{
 radius = 5.0
 height = 14.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation", "spritesheet")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxibo"]
+size = Vector2(9.94376, 33.7228)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation", "spritesheet") groups=["Player"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_rxibo")
@@ -266,8 +269,8 @@ autoplay = "idle"
 [node name="SpriteSheet" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_rl62b")
-animation = &"attack"
-frame = 2
+animation = &"idle"
+frame = 1
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
@@ -280,8 +283,21 @@ position = Vector2(-3, -5)
 position = Vector2(-5, -5)
 rotation = 1.5708
 target_position = Vector2(0, 16)
+collision_mask = 0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("..")
 
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 24
+
+[node name="Collision" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -7)
+scale = Vector2(1.20679, 0.474456)
+shape = SubResource("RectangleShape2D_rxibo")
+debug_color = Color(0.718299, 0.44271, 0.509852, 0.42)
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
