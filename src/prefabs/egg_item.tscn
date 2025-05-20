@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkrftosfcqpl8"]
 
-[ext_resource type="Texture2D" uid="uid://32s0nx8k7yei" path="res://src/assets/Chiken Adventure/EggItem.png" id="1_mrofh"]
+[ext_resource type="Texture2D" uid="uid://32s0nx8k7yei" path="res://assets/Chiken Adventure/EggItem.png" id="1_mrofh"]
 
 [sub_resource type="Animation" id="Animation_mrofh"]
 length = 0.001

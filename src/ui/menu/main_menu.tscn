@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://buuti6xioyow3"]
+
+[ext_resource type="Script" uid="uid://biw8yxxagxhvs" path="res://src/ui/menu/main_menu.gd" id="1_jnwf7"]
+[ext_resource type="Texture2D" uid="uid://cvnkfcmgvwssk" path="res://assets/assets_pack/Chiken Adventure/chicken.png" id="1_rohls"]
+[ext_resource type="Texture2D" uid="uid://bnqjh0gvpvedc" path="res://assets/assets_pack/Chiken Adventure/Chicken Adventure.png" id="2_jnwf7"]
+[ext_resource type="AudioStream" uid="uid://d26whg55cdxp3" path="res://assets/music/5 Action Chiptunes By Juhani Junkala/Juhani Junkala [Retro Game Music Pack] Title Screen.wav" id="4_fioea"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnwf7")
+highlight_color = Color(0.126624, 0.126624, 0.110778, 0.3)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.846222, 0.684213, 0.439806, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Chicken" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(43, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_rohls")
+expand_mode = 1
+
+[node name="ChickenAdventure" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_jnwf7")
+expand_mode = 5
+
+[node name="BoxContainer" type="BoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="MainButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/BoxContainer/MainButtons"]
+layout_mode = 2
+focus_mode = 1
+text = "Play"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/BoxContainer/MainButtons"]
+layout_mode = 2
+text = "Credtis
+"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/BoxContainer/MainButtons"]
+layout_mode = 2
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fioea")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BoxContainer/MainButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BoxContainer/MainButtons/ExitButton" to="." method="_on_exit_button_pressed"]

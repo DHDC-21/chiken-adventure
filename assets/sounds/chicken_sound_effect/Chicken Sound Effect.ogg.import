@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crthcwjc4wrpg"
+path="res://.godot/imported/Chicken Sound Effect.ogg-72e05bcaf58bfe97018a82f54ec4837f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/chicken_sound_effect/Chicken Sound Effect.ogg"
+dest_files=["res://.godot/imported/Chicken Sound Effect.ogg-72e05bcaf58bfe97018a82f54ec4837f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

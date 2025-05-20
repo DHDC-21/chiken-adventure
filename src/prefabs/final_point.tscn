@@ -1,14 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbyqqba50b07f"]
 
 [ext_resource type="Script" uid="uid://d4h5ga4qc846u" path="res://src/prefabs/final_point.gd" id="1_1f5wi"]
-[ext_resource type="Texture2D" uid="uid://0wojdq5il1yu" path="res://src/assets/Chiken Adventure/emptyEggSpot.png" id="1_07jdm"]
-[ext_resource type="Texture2D" uid="uid://dahe6fd63xi4n" path="res://src/assets/Chiken Adventure/EggSpot.png" id="2_my34l"]
+[ext_resource type="Texture2D" uid="uid://0wojdq5il1yu" path="res://assets/Chiken Adventure/emptyEggSpot.png" id="1_07jdm"]
+[ext_resource type="Texture2D" uid="uid://dahe6fd63xi4n" path="res://assets/Chiken Adventure/EggSpot.png" id="2_my34l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my34l"]
 size = Vector2(18, 18)
 
-[sub_resource type="Animation" id="Animation_1f5wi"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_ggfog"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -22,8 +22,8 @@ tracks/0/keys = {
 "values": [ExtResource("1_07jdm")]
 }
 
-[sub_resource type="Animation" id="Animation_ggfog"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_1f5wi"]
+resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
