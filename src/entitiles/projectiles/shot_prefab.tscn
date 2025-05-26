@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5pd4np157c4"]
 
-[ext_resource type="Texture2D" uid="uid://32s0nx8k7yei" path="res://assets/Chiken Adventure/EggItem.png" id="1_1ibqt"]
 [ext_resource type="Script" uid="uid://cu41aebytm4lk" path="res://src/entitiles/projectiles/shot_prefab.gd" id="1_yo721"]
+[ext_resource type="Texture2D" uid="uid://fgnlpejphm2c" path="res://assets/assets_pack/Chiken Adventure/EggItem.png" id="2_x07uv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yo721"]
 radius = 3.0
@@ -18,7 +18,7 @@ rotation = 0.000258911
 shape = SubResource("CapsuleShape2D_yo721")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_1ibqt")
+texture = ExtResource("2_x07uv")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 

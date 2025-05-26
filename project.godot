@@ -15,14 +15,15 @@ config/name_localized={
 "en": "Chiken Adventure",
 "pt": "A Aventura da Galinha"
 }
-config/version="0.0.0"
+config/version="1.0.0"
+run/main_scene="uid://bjhsedgkt5j55"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://cstvwajyvjje8"
 
 [autoload]
 
 Hud="*res://src/ui/hud.tscn"
-VirtualJoystick="*res://src/ui/virtual_joystick.tscn"
+VirtualJoystick="res://src/ui/virtual_joystick.tscn"
 
 [display]
 
@@ -69,6 +70,10 @@ attack={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 

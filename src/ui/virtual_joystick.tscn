@@ -1,15 +1,16 @@
 [gd_scene load_steps=9 format=3 uid="uid://cvl05q7bqs2u2"]
 
-[ext_resource type="Texture2D" uid="uid://cif46raerrfja" path="res://assets/ui/virtual_joystick/button_left.png" id="1_5pylk"]
-[ext_resource type="Texture2D" uid="uid://dud4o42eyj3x5" path="res://assets/ui/virtual_joystick/button_rigth.png" id="1_sl7rs"]
-[ext_resource type="Texture2D" uid="uid://wng52262c8mq" path="res://assets/ui/virtual_joystick/button_left_pressed.png" id="2_t1rgy"]
-[ext_resource type="Texture2D" uid="uid://bkwbsiv3y5kxq" path="res://assets/ui/virtual_joystick/button_rigth_pressed.png" id="4_7hvxm"]
-[ext_resource type="Texture2D" uid="uid://q7g82suji3dv" path="res://assets/ui/virtual_joystick/button_jump.png" id="5_6elro"]
-[ext_resource type="Texture2D" uid="uid://b45u4kig7ukep" path="res://assets/ui/virtual_joystick/button_jump_pressed.png" id="6_brh4w"]
-[ext_resource type="Texture2D" uid="uid://cil0s24tql8kw" path="res://assets/ui/virtual_joystick/button_attack.png" id="7_dr4x4"]
-[ext_resource type="Texture2D" uid="uid://chy1vlhwtwfsn" path="res://assets/ui/virtual_joystick/button_attack_pressed.png" id="8_ntgke"]
+[ext_resource type="Texture2D" uid="uid://dwmlwky3rtbt5" path="res://assets/ui/virtual_joystick/button_left.png" id="1_5pylk"]
+[ext_resource type="Texture2D" uid="uid://7mv4o6r4ccwh" path="res://assets/ui/virtual_joystick/button_rigth.png" id="1_sl7rs"]
+[ext_resource type="Texture2D" uid="uid://c7wi5n4q1oq1k" path="res://assets/ui/virtual_joystick/button_left_pressed.png" id="2_t1rgy"]
+[ext_resource type="Texture2D" uid="uid://b0q0j5vru10km" path="res://assets/ui/virtual_joystick/button_rigth_pressed.png" id="4_7hvxm"]
+[ext_resource type="Texture2D" uid="uid://4mkrd6pqfg0y" path="res://assets/ui/virtual_joystick/button_jump.png" id="5_6elro"]
+[ext_resource type="Texture2D" uid="uid://b5m02bjpfisa" path="res://assets/ui/virtual_joystick/button_jump_pressed.png" id="6_brh4w"]
+[ext_resource type="Texture2D" uid="uid://c0hd2kratm3wf" path="res://assets/ui/virtual_joystick/button_attack.png" id="7_dr4x4"]
+[ext_resource type="Texture2D" uid="uid://cwrwbm11y6xpr" path="res://assets/ui/virtual_joystick/button_attack_pressed.png" id="8_ntgke"]
 
 [node name="VirtualJoystick" type="CanvasLayer"]
+follow_viewport_enabled = true
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
 position = Vector2(20, 180)
