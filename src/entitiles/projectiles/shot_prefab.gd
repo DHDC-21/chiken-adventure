@@ -1,6 +1,6 @@
 extends Area2D
 
-var sprite: Sprite2D 
+var sprite: Sprite2D
 var speed: float = 300
 var direction := 1
 
@@ -20,7 +20,7 @@ func _on_screen_exited() -> void:
 
 
 func _on_body_entered(_body:Node2D) -> void:
-	print(_body.name)
+	# print(_body.name)
 	if _body.is_in_group("Enemy"):
 		_body.animation.play("hurt")
 		queue_free()

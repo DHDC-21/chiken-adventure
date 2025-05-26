@@ -10,15 +10,19 @@ config_version=5
 
 [application]
 
-config/name="TIC em trilhas"
+config/name="Chicken Adventure"
 config/name_localized={
 "en": "Chiken Adventure",
 "pt": "A Aventura da Galinha"
 }
 config/version="0.0.0"
-run/main_scene="uid://bcjac1iprbolt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Hud="*res://src/ui/hud.tscn"
+VirtualJoystick="*res://src/ui/virtual_joystick.tscn"
 
 [display]
 

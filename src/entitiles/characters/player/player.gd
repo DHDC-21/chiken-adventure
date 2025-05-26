@@ -4,12 +4,12 @@ extends CharacterBase
 @onready var shot_spawn: Marker2D = $ShotSpawn
 @onready var shot_direction: RayCast2D = $ShotDirection
 
+
 func _ready() -> void:
 	pass
 
 func _physics_process(_delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * _delta
+	handle_gravity(_delta)
 
 	handle_jump_action(_delta)
 	handle_move()
@@ -56,7 +56,7 @@ func handle_attack() -> void:
 	var input_attack = Input.is_action_just_pressed("attack")
 
 	if input_attack:
-		print(self.name, ": *is attacking*")
+		# print(self.name, ": *is attacking*")
 		can_attack = false;
 		#is_attacking = true
 		animation.play("attack")
@@ -74,41 +74,23 @@ func shot_prefab() -> void:
 	newShot.set_collision_mask_value(4, true)
 
 	if spritesheet.flip_h:
-		print(self.name, ": atirando para direita!")
+		# print(self.name, ": atirando para direita!")
 		newShot.sprite.set_flip_v(true)
 		newShot.set_direction(1)
 		velocity.x = -knockback * speed
 	else:
-		print(self.name, ": atirando para esquerda!")
+		# print(self.name, ": atirando para esquerda!")
 		newShot.sprite.set_flip_v(false)
 		newShot.set_direction(-1)
 		velocity.x = knockback * speed
-
+																									  
 func _on_animation_finished(anim_name: StringName) -> void:
 	# print(self.name,": animação finalizada!")
-	if anim_name == "attack":
-		print(self.name,": ataque finalizado.")
-		can_attack = true
-		#is_attacking = false
+	match anim_name:
+		"attack":
+			# print(self.name,": ataque finalizado.")
+			can_attack = true
+			#is_attacking = false
 
-
-func _on_hurt_box_body_entered(_body:Node2D) -> void:
-	if _body.name != self.name and _body.is_in_group("Enemy") and can_die:
-		print(self.name,": fui acertado pelo ",_body.name)
-
-
-func _on_hurt_box_area_entered(_area: Area2D) -> void:
-	match _area.name:
-		&"EggItem":
-			print(self.name, ": peguei o ",String(_area.name))
-			can_win_level = true
-			_area.queue_free()
-			var hud_egg = get_tree().current_scene.get_ #node("UI/Hud/Egg")
-			hud_egg.modulate = Color(1,1,1,1)
-
-		&"FinalPoint":
-			if can_win_level == true:
-				print(self.name,": *ganhei o level*!")
-				_area.animation.play("win_level")
-			else:
-				print(self.name,": cheguei ao ",String(_area.name))
+		"hurt":
+			queue_free()

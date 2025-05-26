@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtmertlkwjwbm"]
 
-[ext_resource type="Texture2D" uid="uid://32s0nx8k7yei" path="res://assets/Chiken Adventure/EggItem.png" id="1_eqvli"]
+[ext_resource type="Texture2D" uid="uid://32s0nx8k7yei" path="res://assets/assets_pack/Chiken Adventure/EggItem.png" id="1_eqvli"]
 
 [node name="Hud" type="CanvasLayer"]
 
