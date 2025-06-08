@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://bjhsedgkt5j55"]
+[gd_scene load_steps=8 format=4 uid="uid://bjhsedgkt5j55"]
 
 [ext_resource type="Texture2D" uid="uid://cfn8btl773ohu" path="res://assets/assets_pack/Pixel Adventure 1/Terrain/Terrain (16x16).png" id="1_cl4np"]
+[ext_resource type="Script" uid="uid://cyqsl3acuehny" path="res://src/maps/level_1.gd" id="1_uab77"]
 [ext_resource type="PackedScene" uid="uid://bkrftosfcqpl8" path="res://src/prefabs/egg_item.tscn" id="2_uab77"]
 [ext_resource type="PackedScene" uid="uid://cbyqqba50b07f" path="res://src/prefabs/final_point.tscn" id="3_nrqmh"]
 [ext_resource type="PackedScene" uid="uid://drfgrvwobvyv6" path="res://src/entitiles/characters/player/chicken.tscn" id="4_dqud2"]
@@ -333,6 +334,7 @@ terrain_set_0/terrain_0/color = Color(0.858824, 0.345098, 0.25098, 1)
 sources/0 = SubResource("TileSetAtlasSource_b3shj")
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_uab77")
 
 [node name="World" type="Node2D" parent="."]
 

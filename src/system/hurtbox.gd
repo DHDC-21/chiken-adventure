@@ -4,6 +4,7 @@ var parent_node
 
 func _ready() -> void:
 	parent_node = self.get_parent()
+	
 
 
 func _on_area_entered(_area:Area2D) -> void:
@@ -13,7 +14,7 @@ func _on_area_entered(_area:Area2D) -> void:
 				print(parent_node.name, ": peguei o ",String(_area.name))
 				get_parent().can_win_level = true
 				_area.queue_free()
-				var hud_egg = Hud.get_node("Egg")
+				var hud_egg = get_tree().current_scene.get_node("Hud/Egg")
 				# print(hud_egg)
 				if hud_egg:
 					hud_egg.modulate = Color(1,1,1,1)

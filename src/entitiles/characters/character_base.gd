@@ -9,23 +9,13 @@ class_name CharacterBase extends CharacterBody2D
 @export var can_move: bool = true
 @export var  is_attacking: bool = false
 
-@export_category("Movement Variables")
-@export var speed: float = 75.0
+@export_category("Character Variables")
+@export var move_speed: float = 75.0
 @export var jump_force: float = -300.0
 @export var gravity: float =  200
 @export var knockback: int = 1
 
-@export_category("Resources")
+@export_category("Character Elements")
 @export var animation: AnimationPlayer
 @export var spritesheet: AnimatedSprite2D
-
-
-func _ready() -> void:
-	pass
-
-func _physics_process(_delta: float) -> void:
-	handle_gravity(_delta)
-
-func handle_gravity(_delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * _delta
+@export var state_machine: StateMachine

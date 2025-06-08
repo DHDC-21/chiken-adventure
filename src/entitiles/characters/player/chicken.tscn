@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://drfgrvwobvyv6"]
 
-[ext_resource type="Script" uid="uid://cuw5obq527jk4" path="res://src/entitiles/characters/player/player.gd" id="1_rxibo"]
-[ext_resource type="Texture2D" uid="uid://biufxqlvunhw8" path="res://assets/assets_pack/Chiken Adventure/chicken_spritesheet.png" id="2_0hg5k"]
+[ext_resource type="Script" uid="uid://cuw5obq527jk4" path="res://src/entitiles/characters/player/chicken.gd" id="1_rxibo"]
+[ext_resource type="Texture2D" uid="uid://sr4nqakpi6wf" path="res://assets/assets_pack/Chiken Adventure/chicken_spritesheet.png" id="2_0hg5k"]
 [ext_resource type="Script" uid="uid://dl1lkv3sdborl" path="res://src/system/hurtbox.gd" id="3_054hq"]
 
 [sub_resource type="Animation" id="Animation_ss0a0"]

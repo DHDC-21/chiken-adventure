@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://drfi2ym57g1jh"]
+[gd_scene load_steps=2 format=3 uid="uid://drfi2ym57g1jh"]
+
+[ext_resource type="Script" uid="uid://2qx1mgus5ldx" path="res://src/ui/menu/credits.gd" id="1_o8ks2"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o8ks2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -43,3 +46,5 @@ text = "Back"
 layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "Create by DHDC"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

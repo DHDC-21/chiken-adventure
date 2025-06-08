@@ -1,38 +1,64 @@
-extends Control
+extends Node
 
 
-@onready var menu_buttons:= [$MarginContainer/VBoxContainer/BoxContainer/MainButtons/PlayButton, $MarginContainer/VBoxContainer/BoxContainer/MainButtons/ExitButton]
-var current_button : int = 0
+@export var level_test: bool = true
 
-@onready var selected_button := ColorRect.new()
-@export var highlight_color: Color = Color(1,1,0,0.3)
+enum BUTTON {
+	Play,
+	Options,
+	Credits,
+	Exit,
+}
+
+@export var menu_buttons: Array[Button]
+var index_menu_buttons: int = 0
+var using_keyboard: bool = false
+
 
 func _ready() -> void:
-	selected_button.color = highlight_color
-	add_child(selected_button)
+	pass
 
-func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_up"):
-		current_button = (current_button - 1) % menu_buttons.size()
+func _process(_delta: float) -> void:
+	if using_keyboard:
+		if Input.is_action_just_pressed("ui_up"):
+			index_menu_buttons = (index_menu_buttons - 1) % menu_buttons.size()
+			menu_buttons[index_menu_buttons].grab_focus()
 
-	if Input.is_action_just_pressed("ui_down"):
-		current_button = (current_button + 1) % menu_buttons.size()
+		elif Input.is_action_just_pressed("ui_down"):
+			index_menu_buttons = (index_menu_buttons + 1) % menu_buttons.size()
+			menu_buttons[index_menu_buttons].grab_focus()
 
-	selected_button.global_position = menu_buttons[current_button].global_position
-	selected_button.size = menu_buttons[current_button].size
-	menu_buttons[current_button].grab_focus()
 
-	if Input.is_action_just_pressed("ui_accept"):
-		match menu_buttons[current_button].name:
-			"PlayButton":
-				_on_play_button_pressed()
-			"ExitButton":
-				_on_exit_button_pressed()
+		if Input.is_action_just_pressed("ui_accept"):
+			# print(menu_buttons[index_menu_buttons].name," selecionado!")
+			_on_button_pressed(menu_buttons[index_menu_buttons].name)
 
-func _on_play_button_pressed() -> void:
-	print("Entrando a demo")
-	return
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		using_keyboard = true
+	elif event is InputEventMouseButton or event is InputEventScreenTouch:
+		using_keyboard = false
 
-func _on_exit_button_pressed() -> void:
-	print("Saindo do jogo")
-	return
+func _on_button_pressed(btn: String) -> void:
+	print(btn, " acionado!")
+	match btn:
+		"Play":
+			print("Iniciando o level 1")
+			if level_test == true:
+				get_tree().change_scene_to_file("res://src/maps/level_test.tscn")
+			else:
+				get_tree().change_scene_to_file("res://src/maps/level_1.tscn")
+
+		"Options":
+			print("Abrindo menu de opções")
+			GameManager.previous_scene = get_tree().current_scene.scene_file_path
+			get_tree().change_scene_to_file("res://src/ui/menu/options_menu.tscn")
+
+		"Credits":
+			print("Abrindo a tela de créditos")
+			GameManager.previous_scene = get_tree().current_scene.scene_file_path
+			get_tree().change_scene_to_file("res://src/ui/menu/credits.tscn")
+
+		"Exit":
+			print("Saindo do jogo... obrigado por jogar!")
+			get_tree().quit()
