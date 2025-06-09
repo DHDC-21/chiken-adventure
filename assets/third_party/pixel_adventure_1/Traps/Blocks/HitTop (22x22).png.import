@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://prop6r8jr2dk"
-path="res://.godot/imported/HitTop (22x22).png-d567b3cd99f31fd3645242448c458706.ctex"
+path="res://.godot/imported/HitTop (22x22).png-5fb824e37b47a350f197023acdf52974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Traps/Blocks/HitTop (22x22).png"
-dest_files=["res://.godot/imported/HitTop (22x22).png-d567b3cd99f31fd3645242448c458706.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Traps/Blocks/HitTop (22x22).png"
+dest_files=["res://.godot/imported/HitTop (22x22).png-5fb824e37b47a350f197023acdf52974.ctex"]
 
 [params]
 

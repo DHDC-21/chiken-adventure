@@ -1,21 +1,23 @@
-class_name PlayerController extends Node
+class_name PlayerController extends Controller
 
-'''
-signal move_right
-signal move_left
-signal jump
 
-func _input(_event):
-	if Input.is_action_just_pressed("move_right"):
-		emit_signal("move_right")
-	if Input.is_action_just_pressed("move_left"):
-		emit_signal("move_left")
-	if Input.is_action_just_pressed("jump"):
-		emit_signal("jump")
-'''
+var direction := 0.0
+var jump_pressed := false
+var double_jump_pressed := false
 
-@onready var controlled_player:= self.owner
+func update(_character: CharacterBase, _delta: float):
+	direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	jump_pressed = Input.is_action_just_pressed("jump")
+	double_jump_pressed = Input.is_action_just_pressed("jump")  # pode ter lógica extra se quiser limitar
 
-func _physics_process(_delta: float) -> void:
-	if controlled_player:
-		pass
+func get_direction() -> float:
+	return direction
+
+func is_moving() -> bool:
+	return direction
+
+func is_jumping() -> bool:
+	return jump_pressed
+
+func is_double_jumping() -> bool:
+	return double_jump_pressed

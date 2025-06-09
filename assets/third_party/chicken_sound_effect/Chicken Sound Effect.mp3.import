@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://h4qe0ipybq0l"
-path="res://.godot/imported/Chicken Sound Effect.mp3-ee96074f94729d7beb2ea63e66188d5f.mp3str"
+path="res://.godot/imported/Chicken Sound Effect.mp3-8a2c0cd2700636f4d8fe4c16c1def13d.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/chicken_sound_effect/Chicken Sound Effect.mp3"
-dest_files=["res://.godot/imported/Chicken Sound Effect.mp3-ee96074f94729d7beb2ea63e66188d5f.mp3str"]
+source_file="res://assets/third_party/chicken_sound_effect/Chicken Sound Effect.mp3"
+dest_files=["res://.godot/imported/Chicken Sound Effect.mp3-8a2c0cd2700636f4d8fe4c16c1def13d.mp3str"]
 
 [params]
 

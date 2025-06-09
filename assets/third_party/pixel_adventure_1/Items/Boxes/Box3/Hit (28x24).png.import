@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w8e64fwvpy7q"
-path="res://.godot/imported/Hit (28x24).png-d9d3a2493271992d935bd6973403b0ca.ctex"
+path="res://.godot/imported/Hit (28x24).png-e84c30dfcb33ff891c3055b5c5f2cfa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Items/Boxes/Box3/Hit (28x24).png"
-dest_files=["res://.godot/imported/Hit (28x24).png-d9d3a2493271992d935bd6973403b0ca.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Items/Boxes/Box3/Hit (28x24).png"
+dest_files=["res://.godot/imported/Hit (28x24).png-e84c30dfcb33ff891c3055b5c5f2cfa2.ctex"]
 
 [params]
 

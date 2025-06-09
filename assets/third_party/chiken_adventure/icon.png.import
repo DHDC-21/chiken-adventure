@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cstvwajyvjje8"
-path="res://.godot/imported/icon.png-22ce5306224eba18c72bebb15d606d7e.ctex"
+path="res://.godot/imported/icon.png-1dce98cb9cd2d3dfb2b799363c2c692b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Chiken Adventure/icon.png"
-dest_files=["res://.godot/imported/icon.png-22ce5306224eba18c72bebb15d606d7e.ctex"]
+source_file="res://assets/third_party/chiken_adventure/icon.png"
+dest_files=["res://.godot/imported/icon.png-1dce98cb9cd2d3dfb2b799363c2c692b.ctex"]
 
 [params]
 

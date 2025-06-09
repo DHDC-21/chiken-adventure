@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqk7nxwuo7xf4"
-path="res://.godot/imported/EggSpot.png-2479d2abf6a32dc922243774fd4adf13.ctex"
+path="res://.godot/imported/EggSpot.png-1788dfdcb52d74d369918acd1e62ecba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Chiken Adventure/EggSpot.png"
-dest_files=["res://.godot/imported/EggSpot.png-2479d2abf6a32dc922243774fd4adf13.ctex"]
+source_file="res://assets/third_party/chiken_adventure/EggSpot.png"
+dest_files=["res://.godot/imported/EggSpot.png-1788dfdcb52d74d369918acd1e62ecba.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjrpqsjhl8718"
-path="res://.godot/imported/Volume.png-430cfc11d30152bfe8e6a86d41d37ea1.ctex"
+path="res://.godot/imported/Volume.png-0ec885be5cb37007935e111a4cff329e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Menu/Buttons/Volume.png"
-dest_files=["res://.godot/imported/Volume.png-430cfc11d30152bfe8e6a86d41d37ea1.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Menu/Buttons/Volume.png"
+dest_files=["res://.godot/imported/Volume.png-0ec885be5cb37007935e111a4cff329e.ctex"]
 
 [params]
 

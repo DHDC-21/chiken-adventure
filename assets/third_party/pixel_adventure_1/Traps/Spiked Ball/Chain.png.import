@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b14w0aj4mkyd7"
-path="res://.godot/imported/Chain.png-4e94ad7234552315c21253a23ba88454.ctex"
+path="res://.godot/imported/Chain.png-981d12d9d18e3c07ce188a81c0e5afe3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Traps/Spiked Ball/Chain.png"
-dest_files=["res://.godot/imported/Chain.png-4e94ad7234552315c21253a23ba88454.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Traps/Spiked Ball/Chain.png"
+dest_files=["res://.godot/imported/Chain.png-981d12d9d18e3c07ce188a81c0e5afe3.ctex"]
 
 [params]
 

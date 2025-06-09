@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceo8n6kno8c8f"
-path="res://.godot/imported/Jump (32x32).png-a96ac2bf304d7b7df8517e4880758cc4.ctex"
+path="res://.godot/imported/Jump (32x32).png-57acfbec64336278ce0c102b0bee8171.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Main Characters/Virtual Guy/Jump (32x32).png"
-dest_files=["res://.godot/imported/Jump (32x32).png-a96ac2bf304d7b7df8517e4880758cc4.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Main Characters/Virtual Guy/Jump (32x32).png"
+dest_files=["res://.godot/imported/Jump (32x32).png-57acfbec64336278ce0c102b0bee8171.ctex"]
 
 [params]
 

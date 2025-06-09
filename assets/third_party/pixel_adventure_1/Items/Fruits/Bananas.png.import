@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://753kpbuf8ih3"
-path="res://.godot/imported/Bananas.png-aa2f4d4436a08a0de5644745700a2f7c.ctex"
+path="res://.godot/imported/Bananas.png-b4429b8e314391df5c7f22cec605a082.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Items/Fruits/Bananas.png"
-dest_files=["res://.godot/imported/Bananas.png-aa2f4d4436a08a0de5644745700a2f7c.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Items/Fruits/Bananas.png"
+dest_files=["res://.godot/imported/Bananas.png-b4429b8e314391df5c7f22cec605a082.ctex"]
 
 [params]
 

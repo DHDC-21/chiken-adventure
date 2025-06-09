@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://car22cilsct"
-path="res://.godot/imported/Off.png-21195bc0a7e4b2aad7dd492977ad0b5f.ctex"
+path="res://.godot/imported/Off.png-8c585af218ddf0183c9b0bde7bd76cc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Traps/Fan/Off.png"
-dest_files=["res://.godot/imported/Off.png-21195bc0a7e4b2aad7dd492977ad0b5f.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Traps/Fan/Off.png"
+dest_files=["res://.godot/imported/Off.png-8c585af218ddf0183c9b0bde7bd76cc7.ctex"]
 
 [params]
 

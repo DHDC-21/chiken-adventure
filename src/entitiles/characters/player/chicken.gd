@@ -1,6 +1,6 @@
-extends CharacterBase
+class_name Chicken extends CharacterBase
 
-
+'''
 @onready var shot_spawn: Marker2D = $ShotSpawn
 @onready var shot_direction: RayCast2D = $ShotDirection
 
@@ -83,7 +83,7 @@ func shot_prefab() -> void:
 		newShot.sprite.set_flip_v(false)
 		newShot.set_direction(-1)
 		velocity.x = knockback * speed
-																									  
+
 func _on_animation_finished(anim_name: StringName) -> void:
 	# print(self.name,": animação finalizada!")
 	match anim_name:

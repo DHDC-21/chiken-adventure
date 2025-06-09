@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sr4nqakpi6wf"
-path="res://.godot/imported/chicken_spritesheet.png-a6f80ec532520df52cbb4bda8f7ba0da.ctex"
+path="res://.godot/imported/chicken_spritesheet.png-fc0a09e9962777389ea85174f3b1ede0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Chiken Adventure/chicken_spritesheet.png"
-dest_files=["res://.godot/imported/chicken_spritesheet.png-a6f80ec532520df52cbb4bda8f7ba0da.ctex"]
+source_file="res://assets/third_party/chiken_adventure/chicken_spritesheet.png"
+dest_files=["res://.godot/imported/chicken_spritesheet.png-fc0a09e9962777389ea85174f3b1ede0.ctex"]
 
 [params]
 

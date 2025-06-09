@@ -1,19 +1,21 @@
 class_name StateBase extends Node
 
 
-# referência do node a ser controlado
-var controlled_node: Node
-
-# referência da maquina de estados
+var character: CharacterBase
 var state_machine: StateMachine
 
+func init(character_ref: CharacterBase, state_machine_ref: StateMachine):
+	character = character_ref
+	state_machine = state_machine_ref
 
-func start(): pass
-func end(): pass
+func enter():
+	pass
 
-#
-func _on_process(_delta): pass
-func _on_physics_process(_delta): pass
-func _on_input(_event): pass
-func _on_unhandled_input(_event): pass
-func _on_unhandled_key_input(_event): pass
+func exit():
+	pass
+
+func update(_delta):
+	pass
+
+func handle_gravity(delta):
+	character.velocity.y += character.gravity * delta

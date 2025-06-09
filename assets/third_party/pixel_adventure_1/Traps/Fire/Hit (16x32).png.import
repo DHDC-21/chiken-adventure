@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvs50xruatuik"
-path="res://.godot/imported/Hit (16x32).png-83a8b5e5158cd2eba7c7948078d27f27.ctex"
+path="res://.godot/imported/Hit (16x32).png-11479fee73e6a8344554c61bfe6bf43e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Traps/Fire/Hit (16x32).png"
-dest_files=["res://.godot/imported/Hit (16x32).png-83a8b5e5158cd2eba7c7948078d27f27.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Traps/Fire/Hit (16x32).png"
+dest_files=["res://.godot/imported/Hit (16x32).png-11479fee73e6a8344554c61bfe6bf43e.ctex"]
 
 [params]
 

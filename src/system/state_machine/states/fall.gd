@@ -1,11 +1,16 @@
-class_name FallState extends CharacterStateBase
+class_name FallState extends StateBase
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func enter():
+	character.animation.play("fall")
 
+func update(delta):
+	var dir = character.controller.get_direction()
+	character.velocity.x = dir * character.move_speed
+	handle_gravity(delta)
+	character.move_and_slide()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	if character.controller.is_double_jumping():
+		state_machine.change_state("double_jump")
+	elif character.is_on_floor():
+		state_machine.change_state("idle")

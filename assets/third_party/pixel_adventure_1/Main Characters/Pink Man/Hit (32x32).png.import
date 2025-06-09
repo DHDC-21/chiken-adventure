@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfwh1builk24o"
-path="res://.godot/imported/Hit (32x32).png-371b0b7d7c26d6ece55f46c27f38e041.ctex"
+path="res://.godot/imported/Hit (32x32).png-0f4e1c528581531c26a7f2fa1e8abb64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Main Characters/Pink Man/Hit (32x32).png"
-dest_files=["res://.godot/imported/Hit (32x32).png-371b0b7d7c26d6ece55f46c27f38e041.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Main Characters/Pink Man/Hit (32x32).png"
+dest_files=["res://.godot/imported/Hit (32x32).png-0f4e1c528581531c26a7f2fa1e8abb64.ctex"]
 
 [params]
 

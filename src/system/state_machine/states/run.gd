@@ -1,21 +1,23 @@
-class_name RunState extends CharacterStateBase
+class_name RunState extends StateBase
 
-var move_speed:float:
-	set(value):
-		move_speed = character_base.move_speed
-	get:
-		return move_speed
 
-func on_physics_process(delta):	
-	character_base.animation.play("run")
-	character_base.velocity.x = Input.get_axis("ui_left", "ui_right") * move_speed
-	
+func enter():
+	character.animation.play("run")
+
+func update(delta):
+	var dir = character.controller.get_direction()
+	if dir < 0:
+		character.spritesheet.flip_h = true
+	else:
+		character.spritesheet.flip_h = false
+
+	character.velocity.x = dir * character.move_speed
 	handle_gravity(delta)
-	character_base.move_and_slide()
+	character.move_and_slide()
 
-func on_input(_event):
-	# seria mejor usar el parametro _event para obtener la información del evento
-	if Input.is_action_just_pressed("jump"): 
-		state_machine.change_to(CharacterStateNames.Jump)
-	elif not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"): 
-		state_machine.change_to(CharacterStateNames.Idle)
+	if dir == 0:
+		state_machine.change_state("walk")
+	elif character.controller.is_jumping():
+		state_machine.change_state("jump")
+	elif not character.is_on_floor():
+		state_machine.change_state("fall")

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c642k52hqplcj"
-path="res://.godot/imported/Juhani Junkala [Retro Game Music Pack] Level 3.wav-1b92b6b909efd0b2ca59ca6518e9d30d.sample"
+path="res://.godot/imported/Juhani Junkala [Retro Game Music Pack] Level 3.wav-998da8092d03fb05aef6397a8abc9c3f.sample"
 
 [deps]
 
-source_file="res://assets/music/5 Action Chiptunes By Juhani Junkala/Juhani Junkala [Retro Game Music Pack] Level 3.wav"
-dest_files=["res://.godot/imported/Juhani Junkala [Retro Game Music Pack] Level 3.wav-1b92b6b909efd0b2ca59ca6518e9d30d.sample"]
+source_file="res://assets/third_party/5_action_chiptunes_by_Juhani_Junkala/Juhani Junkala [Retro Game Music Pack] Level 3.wav"
+dest_files=["res://.godot/imported/Juhani Junkala [Retro Game Music Pack] Level 3.wav-998da8092d03fb05aef6397a8abc9c3f.sample"]
 
 [params]
 

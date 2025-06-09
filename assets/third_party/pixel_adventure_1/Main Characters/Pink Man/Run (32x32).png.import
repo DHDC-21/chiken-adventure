@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr4gd5u5uhd0w"
-path="res://.godot/imported/Run (32x32).png-bbef56c596e670fca6828c2ddecfe49f.ctex"
+path="res://.godot/imported/Run (32x32).png-cb356c0d38b24f005c54f3041f7937e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Main Characters/Pink Man/Run (32x32).png"
-dest_files=["res://.godot/imported/Run (32x32).png-bbef56c596e670fca6828c2ddecfe49f.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Main Characters/Pink Man/Run (32x32).png"
+dest_files=["res://.godot/imported/Run (32x32).png-cb356c0d38b24f005c54f3041f7937e1.ctex"]
 
 [params]
 

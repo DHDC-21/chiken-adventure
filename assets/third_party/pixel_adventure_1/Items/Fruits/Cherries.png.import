@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7qjpqye4ml0g"
-path="res://.godot/imported/Cherries.png-84f693edb2ed8eb54169d9c5959274d3.ctex"
+path="res://.godot/imported/Cherries.png-5ee98cf88b5f493d19927dbe7ab48e89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Items/Fruits/Cherries.png"
-dest_files=["res://.godot/imported/Cherries.png-84f693edb2ed8eb54169d9c5959274d3.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Items/Fruits/Cherries.png"
+dest_files=["res://.godot/imported/Cherries.png-5ee98cf88b5f493d19927dbe7ab48e89.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dglgh30lv766l"
-path="res://.godot/imported/Dust Particle.png-7df707f12f6ce11cc982572e016bb32a.ctex"
+path="res://.godot/imported/Dust Particle.png-8ebbef2a873e5a4af15f6bb63d1ed88b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Other/Dust Particle.png"
-dest_files=["res://.godot/imported/Dust Particle.png-7df707f12f6ce11cc982572e016bb32a.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Other/Dust Particle.png"
+dest_files=["res://.godot/imported/Dust Particle.png-8ebbef2a873e5a4af15f6bb63d1ed88b.ctex"]
 
 [params]
 

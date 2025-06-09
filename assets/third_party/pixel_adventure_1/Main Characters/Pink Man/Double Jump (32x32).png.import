@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdjym42hbrflq"
-path="res://.godot/imported/Double Jump (32x32).png-21d1074d3c4ba58cf895146093cbe1dd.ctex"
+path="res://.godot/imported/Double Jump (32x32).png-090e9080d7b59f02f38fc706cf0abd1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets_pack/Pixel Adventure 1/Main Characters/Pink Man/Double Jump (32x32).png"
-dest_files=["res://.godot/imported/Double Jump (32x32).png-21d1074d3c4ba58cf895146093cbe1dd.ctex"]
+source_file="res://assets/third_party/pixel_adventure_1/Main Characters/Pink Man/Double Jump (32x32).png"
+dest_files=["res://.godot/imported/Double Jump (32x32).png-090e9080d7b59f02f38fc706cf0abd1d.ctex"]
 
 [params]
 
