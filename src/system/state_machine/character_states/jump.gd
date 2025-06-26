@@ -1,21 +1,26 @@
-class_name JumpState extends StateBase
+class_name JumpState extends CharacterStateBase
 
 
 var has_double_jumped := false
+@export var can_move: bool = true
 
 
-func enter():
+func on_enter():
 	character.animation.play("jump")
-	character.velocity.y = -character.jump_force
-	has_double_jumped = false
+	has_double_jumped = true
+	character.do_jump()
 
 func update(delta):
-	var dir = character.controller.get_direction()
-	character.velocity.x = dir * character.move_speed
+	if can_move: handle_movement()
 	handle_gravity(delta)
 	character.move_and_slide()
 
 	if character.controller.is_double_jumping() and not has_double_jumped:
 		state_machine.change_state("double_jump")
+		return
 	elif character.velocity.y > 0:
 		state_machine.change_state("fall")
+		return
+
+func on_exit():
+	has_double_jumped = false

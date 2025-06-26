@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dxo4d5cab38lw" path="res://assets/third_party/pixel_adventure_1/Main Characters/Ninja Frog/Jump (32x32).png" id="5_a7414"]
 [ext_resource type="Texture2D" uid="uid://tq7ayeamyby" path="res://assets/third_party/pixel_adventure_1/Main Characters/Ninja Frog/Run (32x32).png" id="6_v4fu5"]
 [ext_resource type="Texture2D" uid="uid://cuolvlhwx0a2l" path="res://assets/third_party/pixel_adventure_1/Main Characters/Ninja Frog/Wall Jump (32x32).png" id="7_dyqg0"]
-[ext_resource type="Script" uid="uid://cylvhcjclheh6" path="res://src/system/state_machine/states/idle.gd" id="9_o3lcq"]
+[ext_resource type="Script" uid="uid://cylvhcjclheh6" path="res://src/system/state_machine/character_states/idle.gd" id="9_o3lcq"]
 [ext_resource type="Script" uid="uid://18d3vc88cinr" path="res://src/system/state_machine/state_machine.gd" id="10_t0f0f"]
-[ext_resource type="Script" uid="uid://crqypvuu1vpde" path="res://src/system/state_machine/states/double_jump.gd" id="11_lyewg"]
-[ext_resource type="Script" uid="uid://de2mk5jvvcq7q" path="res://src/system/state_machine/states/jump.gd" id="11_ol2be"]
-[ext_resource type="Script" uid="uid://wjwmerrnckbh" path="res://src/system/state_machine/states/run.gd" id="12_qxdav"]
-[ext_resource type="Script" uid="uid://dap2f1neku05" path="res://src/system/state_machine/states/fall.gd" id="13_qxdav"]
+[ext_resource type="Script" uid="uid://crqypvuu1vpde" path="res://src/system/state_machine/character_states/double_jump.gd" id="11_lyewg"]
+[ext_resource type="Script" uid="uid://de2mk5jvvcq7q" path="res://src/system/state_machine/character_states/jump.gd" id="11_ol2be"]
+[ext_resource type="Script" uid="uid://wjwmerrnckbh" path="res://src/system/state_machine/character_states/run.gd" id="12_qxdav"]
+[ext_resource type="Script" uid="uid://dap2f1neku05" path="res://src/system/state_machine/character_states/fall.gd" id="13_qxdav"]
 [ext_resource type="Script" uid="uid://d2ya1mbepy0s4" path="res://src/controllers/player_controller.gd" id="14_ps7dy"]
 
 [sub_resource type="Animation" id="Animation_0gxfy"]
@@ -683,14 +683,16 @@ shape = SubResource("RectangleShape2D_esx14")
 debug_color = Color(0.75868, 0.416302, 0.48561, 0.42)
 
 [node name="CharPosition" type="RemoteTransform2D" parent="."]
-remote_path = NodePath("..")
 
-[node name="PlayerController" type="Node" parent="."]
+[node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("remote_transform")]
 script = ExtResource("14_ps7dy")
+remote_transform = NodePath("../CharPosition")
 metadata/_custom_type_script = "uid://d2ya1mbepy0s4"
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("10_t0f0f")
+default_state = NodePath("RunState")
+debug = true
 metadata/_custom_type_script = "uid://18d3vc88cinr"
 
 [node name="DoubleJumpState" type="Node" parent="StateMachine"]
