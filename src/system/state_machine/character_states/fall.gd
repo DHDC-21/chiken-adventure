@@ -9,7 +9,7 @@ func update(delta):
 	handle_gravity(delta)
 	character.move_and_slide()
 
-	if character.controller.is_double_jumping():
+	if character.controller.is_double_jumping() and character.can_jump():
 		state_machine.change_state("double_jump")
 		return
 	elif character.is_on_floor():

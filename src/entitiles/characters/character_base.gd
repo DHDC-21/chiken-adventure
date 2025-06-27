@@ -5,7 +5,7 @@ class_name CharacterBase extends CharacterBody2D
 @export var jump_force: float = 400.0
 var jumps_left: int = 2
 @export var max_jumps: int = 2
-@export var gravity: float = 1200.0
+@export var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export_category("Character Elements")
 @export var state_machine: StateMachine
