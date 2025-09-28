@@ -4,6 +4,7 @@ class_name IdleState extends CharacterStateBase
 func on_enter():
 	character.animation.play("idle")
 	handle_movement()
+	
 
 func update(delta):
 	handle_gravity(delta)

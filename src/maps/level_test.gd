@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var character: CharacterBase = $CharacterBase
+@export var character: CharacterBase
 @onready var camera: Camera2D = $Camera2D
 
 # Called when the node enters the scene tree for the first time.

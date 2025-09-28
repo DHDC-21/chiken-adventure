@@ -6,6 +6,7 @@ var jump_pressed := false
 var double_jump_pressed := false
 
 @export var remote_transform: RemoteTransform2D
+@export var can_win_level: bool = false
 @export var debug: bool = false
 
 

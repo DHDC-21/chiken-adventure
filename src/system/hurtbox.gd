@@ -4,7 +4,7 @@ var parent_node
 
 func _ready() -> void:
 	parent_node = self.get_parent()
-	
+
 
 
 func _on_area_entered(_area:Area2D) -> void:
@@ -12,7 +12,7 @@ func _on_area_entered(_area:Area2D) -> void:
 		match _area.name:
 			&"EggItem":
 				print(parent_node.name, ": peguei o ",String(_area.name))
-				get_parent().can_win_level = true
+				# get_parent().can_win_level = true
 				_area.queue_free()
 				var hud_egg = get_tree().current_scene.get_node("Hud/Egg")
 				# print(hud_egg)
@@ -33,4 +33,4 @@ func _on_body_entered(_body:Node2D) -> void:
 	if _body != self:
 		if _body.is_in_group("Enemy") and parent_node.is_in_group("Player"):
 			print(parent_node.name,": colidi com o corpo ",_body.name)
-	
+

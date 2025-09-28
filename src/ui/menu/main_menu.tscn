@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://buuti6xioyow3"]
 
 [ext_resource type="Script" uid="uid://biw8yxxagxhvs" path="res://src/ui/menu/main_menu.gd" id="1_jnwf7"]
-[ext_resource type="Texture2D" uid="uid://o4mwpa3sp6b" path="res://assets/assets_pack/Chiken Adventure/chicken.png" id="1_rohls"]
-[ext_resource type="Texture2D" uid="uid://ca1ppbgxnp3kf" path="res://assets/assets_pack/Chiken Adventure/Chicken Adventure.png" id="2_jnwf7"]
-[ext_resource type="AudioStream" uid="uid://4fokhho46v7o" path="res://assets/music/5 Action Chiptunes By Juhani Junkala/Juhani Junkala [Retro Game Music Pack] Title Screen.wav" id="4_fioea"]
+[ext_resource type="Texture2D" uid="uid://o4mwpa3sp6b" path="res://assets/third_party/chiken_adventure/chicken.png" id="1_rohls"]
+[ext_resource type="Texture2D" uid="uid://ca1ppbgxnp3kf" path="res://assets/third_party/chiken_adventure/Chicken Adventure.png" id="2_jnwf7"]
+[ext_resource type="AudioStream" uid="uid://4fokhho46v7o" path="res://assets/third_party/5_action_chiptunes_by_Juhani_Junkala/Juhani Junkala [Retro Game Music Pack] Title Screen.wav" id="4_fioea"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("menu_buttons")]
 layout_mode = 3
@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jnwf7")
+level_test = false
 menu_buttons = [NodePath("MarginContainer/VBoxContainer/MainButtons/Play"), NodePath("MarginContainer/VBoxContainer/MainButtons/OptionsButton"), NodePath("MarginContainer/VBoxContainer/MainButtons/CreditsButton"), NodePath("MarginContainer/VBoxContainer/MainButtons/ExitButton")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
